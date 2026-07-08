@@ -16,31 +16,20 @@ let account = {
 
 function createAccount(name){
 
+    account.username = name;
 
-account.username=name;
-
-
-account.created=true;
+    account.created = true;
 
 
-
-localStorage.setItem(
-
-"LostIslandAccount",
-
-JSON.stringify(account)
-
-);
+    localStorage.setItem(
+        "LostIslandAccount",
+        JSON.stringify(account)
+    );
 
 
-
-alert(
-
-"👤 Account Created: " +
-name
-
-);
-
+    alert(
+        "👤 Account Created: " + name
+    );
 
 }
 
@@ -51,33 +40,21 @@ name
 
 function loadAccount(){
 
-
-let data =
-
-localStorage.getItem(
-"LostIslandAccount"
-);
+    let data = localStorage.getItem(
+        "LostIslandAccount"
+    );
 
 
+    if(data){
 
-if(data){
-
-
-account =
-JSON.parse(data);
+        account = JSON.parse(data);
 
 
+        alert(
+            "Welcome back " + account.username
+        );
 
-alert(
-
-"Welcome back " +
-account.username
-
-);
-
-
-}
-
+    }
 
 }
 
@@ -88,18 +65,13 @@ account.username
 
 function changeUsername(name){
 
+    account.username = name;
 
-account.username=name;
 
-
-localStorage.setItem(
-
-"LostIslandAccount",
-
-JSON.stringify(account)
-
-);
-
+    localStorage.setItem(
+        "LostIslandAccount",
+        JSON.stringify(account)
+    );
 
 }
 
@@ -110,26 +82,22 @@ JSON.stringify(account)
 
 function deleteAccount(){
 
-
-localStorage.removeItem(
-"LostIslandAccount"
-);
-
+    localStorage.removeItem(
+        "LostIslandAccount"
+    );
 
 
-account={
+    account = {
 
-username:"Player",
+        username:"Player",
 
-created:false
+        created:false
 
-};
+    };
 
 
-
-alert(
-"Account deleted"
-);
-
+    alert(
+        "Account deleted"
+    );
 
 }
