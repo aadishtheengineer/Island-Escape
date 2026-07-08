@@ -1,135 +1,121 @@
-// LOST ISLAND ONLINE - ACCOUNT SYSTEM
+// LOST ISLAND ONLINE - ADMIN SYSTEM
 
 
-let account = {
+let admin = {
 
-    username:"Player",
+    active:false,
 
-    created:false
+    username:null
 
 };
 
 
 
 
-// Create account
+// Activate admin
 
-function createAccount(name){
+function activateAdmin(name){
 
+    admin.active = true;
 
-account.username=name;
-
-
-account.created=true;
+    admin.username = name;
 
 
-
-localStorage.setItem(
-
-"LostIslandAccount",
-
-JSON.stringify(account)
-
-);
-
-
-
-alert(
-
-"👤 Account Created: " +
-name
-
-);
-
+    alert(
+        "⭐ Admin Mode Activated\nWelcome " + name
+    );
 
 }
 
 
 
 
-// Load account
+// Give gems
 
-function loadAccount(){
+function adminGiveGems(amount){
 
+    if(admin.active){
 
-let data =
-
-localStorage.getItem(
-"LostIslandAccount"
-);
+        player.gems += amount;
 
 
-
-if(data){
-
-
-account =
-JSON.parse(data);
+        updateHUD();
 
 
+        alert(
+            "💎 Added " + amount + " gems"
+        );
 
-alert(
-
-"Welcome back " +
-account.username
-
-);
-
-
-}
-
+    }
 
 }
 
 
 
 
-// Change username
+// Unlock everything
 
-function changeUsername(name){
+function adminUnlockAll(){
+
+    if(admin.active){
+
+        giveAllWeapons();
+
+        unlockShopAll();
 
 
-account.username=name;
+        alert(
+            "⭐ Everything unlocked!"
+        );
 
-
-localStorage.setItem(
-
-"LostIslandAccount",
-
-JSON.stringify(account)
-
-);
-
+    }
 
 }
 
 
 
 
-// Delete account
+// Spawn events
 
-function deleteAccount(){
+function adminEvent(eventName){
 
+    if(admin.active){
 
-localStorage.removeItem(
-"LostIslandAccount"
-);
+        startEvent(eventName);
 
+    }
 
-
-account={
-
-username:"Player",
-
-created:false
-
-};
+}
 
 
 
-alert(
-"Account deleted"
-);
 
+// Teleport player
+
+function adminTeleport(x,y){
+
+    if(admin.active){
+
+        playerCharacter.x = x;
+
+        playerCharacter.y = y;
+
+    }
+
+}
+
+
+
+
+// Turn off admin
+
+function disableAdmin(){
+
+    admin.active = false;
+
+
+    alert(
+        "Admin mode disabled"
+    );
 
 }
