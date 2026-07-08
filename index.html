@@ -1,113 +1,162 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
+
+<title>Lost Island Online</title>
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>🏝️ Lost Island Online</title>
-
 <link rel="stylesheet" href="style.css">
+
 </head>
+
 
 <body>
 
-<!-- MAIN MENU -->
-<div id="menu">
-
 <h1>🏝️ Lost Island Online</h1>
 
-<p>
-Explore • Mine Gems • Build • Survive • Play Together
-</p>
+<div id="menu">
 
-<button onclick="startGame()">▶ Play</button>
-<button onclick="openCustomize()">🎨 Customize</button>
-<button onclick="openShop()">🛒 Shop</button>
-<button onclick="openSettings()">⚙ Settings</button>
+<button onclick="startGame()">
+▶️ Start Game
+</button>
+
+<button onclick="showLeaderboard()">
+🏆 Leaderboard
+</button>
+
+<button onclick="showAchievements()">
+🥇 Achievements
+</button>
+
+<button onclick="claimDailyReward()">
+🎁 Daily Reward
+</button>
 
 </div>
 
 
-<!-- GAME SCREEN -->
 <canvas id="gameCanvas"></canvas>
 
 
-<!-- PLAYER HUD -->
 <div id="hud">
 
+<p>
 ❤️ Health:
 <span id="health">100</span>
+</p>
 
-<br>
-
+<p>
 💎 Gems:
 <span id="gems">0</span>
+</p>
 
-<br>
-
-⚔ Weapon:
-<span id="weapon">Wood Sword</span>
-
-<br><br>
-
-<button>🎒 Inventory</button>
-
-<button>🛒 Shop</button>
+<p>
+⭐ Level:
+<span id="level">1</span>
+</p>
 
 </div>
 
 
-<!-- MUSIC -->
-<audio id="music" loop>
-<source src="assets/music/island.mp3" type="audio/mpeg">
-</audio>
 
+<!-- GAME FILES -->
 
-<!-- DEVELOPER LOGIN -->
-<div id="developerPanel" class="hidden">
-
-<h2>🔒 Developer Access</h2>
-
-<input 
-id="developerCode"
-placeholder="Enter Code">
-
-<br><br>
-
-<button onclick="unlockDeveloper()">
-Unlock
-</button>
-
-<button onclick="closeDeveloper()">
-Close
-</button>
-
-</div>
-
-
-<!-- DEVELOPER EVENTS -->
-<div id="eventPanel" class="hidden">
-
-<h2>⭐ Developer Events</h2>
-
-<button>🌧 Rain</button>
-<button>❄ Snow</button>
-<button>🌩 Storm</button>
-<button>☄ Meteor Shower</button>
-<button>👹 Spawn Boss</button>
-<button>💎 Gem Event</button>
-<button>🌋 Volcano</button>
-
-</div>
-
-
-<!-- RETURN BUTTON -->
-<button id="returnButton" class="hidden">
-🔄 Return To Normal
-</button>
-
+<script src="config.js"></script>
 
 <script src="game.js"></script>
+<script src="player.js"></script>
+<script src="world.js"></script>
+<script src="map.js"></script>
+
+
+<!-- ITEMS AND INVENTORY -->
+
+<script src="items.js"></script>
+<script src="inventory.js"></script>
+<script src="crafting.js"></script>
+<script src="mining.js"></script>
+<script src="tools.js"></script>
+
+
+<!-- FIGHTING -->
+
+<script src="weapons.js"></script>
+<script src="armor.js"></script>
+<script src="combat.js"></script>
+
+
+<!-- ENEMIES -->
+
+<script src="enemies.js"></script>
+<script src="enemyAI.js"></script>
+
+
+<!-- BOSSES -->
+
+<script src="bosses.js"></script>
+<script src="bossAI.js"></script>
+
+
+<!-- PETS -->
+
+<script src="pets.js"></script>
+<script src="petsAI.js"></script>
+
+
+<!-- WORLD -->
+
+<script src="quests.js"></script>
+<script src="events.js"></script>
+<script src="developerEvents.js"></script>
+
+<script src="weather.js"></script>
+<script src="daynight.js"></script>
+
+
+<!-- PLAYER CUSTOMIZATION -->
+
+<script src="character.js"></script>
+<script src="animations.js"></script>
+<script src="particles.js"></script>
+
+
+<!-- AUDIO -->
+
+<script src="audio.js"></script>
+
+
+<!-- SETTINGS -->
+
+<script src="settings.js"></script>
+<script src="mobile.js"></script>
+
+
+<!-- ACCOUNTS -->
+
+<script src="accounts.js"></script>
+<script src="save.js"></script>
+
+
+<!-- MULTIPLAYER -->
+
+<script src="multiplayer.js"></script>
+<script src="server.js"></script>
+<script src="networking.js"></script>
+
+
+<!-- ADMIN -->
+
+<script src="admin.js"></script>
+
+
+<!-- REWARDS -->
+
+<script src="leaderboard.js"></script>
+<script src="achievements.js"></script>
+<script src="dailyRewards.js"></script>
+<script src="updates.js"></script>
+
 
 </body>
 </html>
