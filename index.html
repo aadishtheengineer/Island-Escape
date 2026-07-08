@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>🏝️ Lost Island Online</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- MAIN MENU -->
+<div id="menu">
+
+<h1>🏝️ Lost Island Online</h1>
+
+<p>
+Explore • Mine Gems • Build • Survive • Play Together
+</p>
+
+<button onclick="startGame()">▶ Play</button>
+<button onclick="openCustomize()">🎨 Customize</button>
+<button onclick="openShop()">🛒 Shop</button>
+<button onclick="openSettings()">⚙ Settings</button>
+
+</div>
+
+
+<!-- GAME SCREEN -->
+<canvas id="gameCanvas"></canvas>
+
+
+<!-- PLAYER HUD -->
+<div id="hud">
+
+❤️ Health:
+<span id="health">100</span>
+
+<br>
+
+💎 Gems:
+<span id="gems">0</span>
+
+<br>
+
+⚔ Weapon:
+<span id="weapon">Wood Sword</span>
+
+<br><br>
+
+<button>🎒 Inventory</button>
+
+<button>🛒 Shop</button>
+
+</div>
+
+
+<!-- MUSIC -->
+<audio id="music" loop>
+<source src="assets/music/island.mp3" type="audio/mpeg">
+</audio>
+
+
+<!-- DEVELOPER LOGIN -->
+<div id="developerPanel" class="hidden">
+
+<h2>🔒 Developer Access</h2>
+
+<input 
+id="developerCode"
+placeholder="Enter Code">
+
+<br><br>
+
+<button onclick="unlockDeveloper()">
+Unlock
+</button>
+
+<button onclick="closeDeveloper()">
+Close
+</button>
+
+</div>
+
+
+<!-- DEVELOPER EVENTS -->
+<div id="eventPanel" class="hidden">
+
+<h2>⭐ Developer Events</h2>
+
+<button>🌧 Rain</button>
+<button>❄ Snow</button>
+<button>🌩 Storm</button>
+<button>☄ Meteor Shower</button>
+<button>👹 Spawn Boss</button>
+<button>💎 Gem Event</button>
+<button>🌋 Volcano</button>
+
+</div>
+
+
+<!-- RETURN BUTTON -->
+<button id="returnButton" class="hidden">
+🔄 Return To Normal
+</button>
+
+
+<script src="game.js"></script>
+
+</body>
+</html>
